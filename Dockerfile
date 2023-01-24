@@ -1,11 +1,5 @@
 # Pull base image.
-FROM ubuntu:latest
-
-RUN \
-# Update
-apt-get update -y && \
-# Install Java
-apt-get install default-jre -y
+FROM openjdk
 
 ADD /var/lib/jenkins/workspace/Gradle_pipejob/build/libs/hello_world-0.0.1-SNAPSHOT.jar spring-mvc-example.jar
 
