@@ -1,4 +1,4 @@
-FROM gradle:4.7.0-jdk8-alpine AS build
+FROM gradle:4.7.0-jdk8-alpine 
 COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
 
@@ -8,6 +8,6 @@ EXPOSE 8080
 
 RUN mkdir /app
 
-COPY --from=build /var/lib/jenkins/workspace/Gradle_pipejob/build/libs/*.jar /app/spring-boot-application.jar
+COPY  /var/lib/jenkins/workspace/Gradle_pipejob/build/libs/*.jar /app/spring-boot-application.jar
 
 ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap", "-Djava.security.egd=file:/dev/./urandom","-jar","/app/spring-boot-application.jar"]
