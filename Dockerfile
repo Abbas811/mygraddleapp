@@ -7,7 +7,7 @@ apt-get update -y && \
 # Install Java
 apt-get install default-jre -y
 
-ADD /var/lib/jenkins/workspace/Gradle_pipejob/build/libs/ spring-mvc-example.jar
+ADD /var/lib/jenkins/workspace/Gradle_pipejob/build/libs/hello_world-0.0.1-SNAPSHOT.jar spring-mvc-example.jar
 
 EXPOSE 8080
 
