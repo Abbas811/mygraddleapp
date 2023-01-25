@@ -4,6 +4,35 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 	id "org.sonarqube" version "3.5.0.2730"
 }
+apply plugin: ‘maven-publish’
+
+publishing {
+
+publications {
+
+maven(MavenPublication) {
+
+artifact(“build/libs/hello_world-$version”+”.jar”) {
+
+extension ‘jar’
+
+}}}
+
+repositories {
+
+maven {
+
+name ‘nexus’
+
+url “http://100.26.36.236:8081/repository/maven-releases/"
+
+credentials {
+
+username project.repoUser
+
+password project.repoPassword
+
+}}}}
 
 group = 'com.example'
 version = '0.0.2'
