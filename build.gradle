@@ -26,13 +26,6 @@ name ‘nexus’
 
 url “http://100.26.36.236:8081/repository/maven-releases/"
 
-credentials {
-
-username project.repoUser
-
-password project.repoPassword
-
-}}}}
 
 group = 'com.example'
 version = '0.0.2'
